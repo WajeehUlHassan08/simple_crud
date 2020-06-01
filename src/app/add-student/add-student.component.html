@@ -1,0 +1,92 @@
+<h2 class="mb-4">
+    {{header}}
+</h2>
+
+<form (ngSubmit)="onSubmit(submitform)" #submitform="ngForm">
+    <div class="row">
+        <div class="col-md-12">
+            <label for="">ID</label>
+            <input type="number" name="id" class="form-control" [ngModel]="student.id" required #id="ngModel">
+
+            <div class="text-danger" *ngIf="id.errors && (id.dirty || id.touched)">    
+                <p *ngIf="id.errors.required">
+                    ID is required
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label for="">Name</label>
+            <input type="text" name="name" class="form-control" [ngModel]="student.name" required #name="ngModel">
+
+            <div class="text-danger" *ngIf="name.errors && (name.dirty || name.touched)">    
+                <p *ngIf="name.errors.required">
+                    Name is required
+                </p>
+            </div>
+        </div>  
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label for="">Father Name</label>
+            <input type="text" name="fathername" class="form-control" [ngModel]="student.fathername" required #fathername="ngModel">
+
+            <div class="text-danger" *ngIf="fathername.errors && (fathername.dirty || fathername.touched)">    
+                <p *ngIf="id.errors.required">
+                    Father Name is required
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label for="">CNIC</label>
+            <input type="number" name="CNIC" class="form-control" [ngModel]="student.CNIC" required #CNIC="ngModel">
+
+            <div class="text-danger" *ngIf="CNIC.errors && (CNIC.dirty || CNIC.touched)">    
+                <p *ngIf="CNIC.errors.required">
+                    CNIC is required
+                </p>
+            </div>
+        </div>  
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label for="">Subject</label>
+            <input type="text" name="subject" class="form-control" [ngModel]="student.subject" required #subject="ngModel">
+
+            <div class="text-danger" *ngIf="subject.errors && (subject.dirty || subject.touched)">    
+                <p *ngIf="subject.errors.required">
+                    Subject is required
+                </p>
+            </div>
+        </div> 
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label for="">University</label>
+            <input type="text" name="university" class="form-control" [ngModel]="student.university" required #university="ngModel">
+
+            <div class="text-danger" *ngIf="university.errors && (university.dirty || university.touched)">    
+                <p *ngIf="university.errors.required">
+                    University Name is required
+                </p>
+            </div>
+        </div> 
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-md-5">
+            <button type="submit" class="btn btn-secondary" [disabled]="!submitform.form.valid">
+                Submit
+            </button>
+        </div>
+    </div>
+
+</form>
